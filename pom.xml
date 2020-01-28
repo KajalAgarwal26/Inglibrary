@@ -78,7 +78,6 @@
 <distributionManagement>
 	<repository>
 		<id>releases</id>
-		<name>Releases</name>
 		<url>http://3.16.147.85:8081/nexus/content/repositories/releases/</url>
 	</repository>
 	
