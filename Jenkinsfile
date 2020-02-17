@@ -4,11 +4,11 @@ node('master'){
                   git 'https://github.com/KajalAgarwal26/Inglibrary.git'
               }
    stage('java build'){
-             sh '/opt/maven/bin/mvn clean verify sonar:sonar -Dsonar.password=admin -Dsonar.login=admin -Dmaven.skip.test=true'
+             sh '/opt/maven/bin/mvn clean verify sonar:sonar -Dsonar.password=admin -Dsonar.login=admin -Dmaven.test.skip=true'
          }
    stage("build & SonarQube analysis") {
               withSonarQubeEnv('sonar') {
-                 sh '/opt/maven/bin/mvn clean deploy sonar:sonar -Dmaven.skip.test=true'
+                 sh '/opt/maven/bin/mvn clean deploy sonar:sonar -Dmaven.test.skip=true'
               }
           }
       
